@@ -17,10 +17,11 @@ namespace TestRig
             InitializeComponent();
         }
 
-        private void retButton_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            this.Close();
-            return;
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            this.MaximizeBox = false;
         }
     }
 }
