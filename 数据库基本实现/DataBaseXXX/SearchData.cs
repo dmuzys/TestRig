@@ -45,7 +45,7 @@ namespace DataBaseXXX
 
                 if (tbxDate.Text.Trim() != "" & tbxCondition.Text.Trim() != "")
                 {
-                    SearchStr = "select DateTime as 时间日期 ,ExperimentCondition as 实验条件,Electric as 电流,Voltage as 电压,Speed as 转速,Torque as 扭矩 from Data where DateTime Like '%'+'" + tbxDate.Text.Trim() + "'+''%' and ExperimentCondition Like '%'+'" + tbxCondition.Text.Trim() + "'+'%'";
+                    SearchStr = "select DateTime as 时间日期 ,ExperimentCondition as 实验条件,Electric as 电流,Voltage as 电压,Speed as 转速,Torque as 扭矩 from Data where DateTime Like '%'+'" + tbxDate.Text.Trim() + "'+'%' and ExperimentCondition Like '%'+'" + tbxCondition.Text.Trim() + "'+'%'";
                 }
                 
 
@@ -85,7 +85,7 @@ namespace DataBaseXXX
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    tbxDate.AutoCompleteCustomSource.Add(reader["DateTime"].ToString());
+                    tbxDate.AutoCompleteCustomSource.Add(Convert.ToDateTime(reader["DateTime"]).ToString("yyyy-MM-dd"));
                     tbxCondition.AutoCompleteCustomSource.Add(reader["ExperimentCondition"].ToString());
                 }
             }

@@ -39,7 +39,7 @@ namespace DataBaseXXX
             {
 
                 livDataBase.Clear();
-                livDataBase.Columns.Add("日期时间", 150, HorizontalAlignment.Center);    //长度150 居中
+                livDataBase.Columns.Add("日期时间", 100, HorizontalAlignment.Center);    //长度150 居中
                 livDataBase.Columns.Add("实验条件", 350, HorizontalAlignment.Center);
                 livDataBase.Columns.Add("电流", 150, HorizontalAlignment.Center);
                 livDataBase.Columns.Add("电压", 150, HorizontalAlignment.Center);
@@ -57,7 +57,7 @@ namespace DataBaseXXX
                 while (sdr.Read())
                 {
                     ListViewItem lvi = new ListViewItem();
-                    lvi.Text = sdr["DateTime"].ToString();
+                    lvi.Text = Convert.ToDateTime(sdr["DateTime"]).ToString("yyyy-MM-dd");
                     lvi.SubItems.Add(sdr["ExperimentCondition"].ToString());
                     lvi.SubItems.Add(sdr["Electric"].ToString());
                     lvi.SubItems.Add(sdr["Voltage"].ToString());
@@ -85,7 +85,7 @@ namespace DataBaseXXX
             conn.Open();
 
             //存储tbx中的数据into到Data表中
-            SqlCommand cmd = new SqlCommand("insert into Data values ('" + DateTime.Now.ToString() + "','" + tbxCondition.Text.Trim() + "','" + tbxElectric.Text.Trim() + "','" + tbxVoltage.Text.Trim() + "','" + tbxSpeed.Text.Trim() + "','" + tbxTorque.Text.Trim() + "')", conn);
+            SqlCommand cmd = new SqlCommand("insert into Data values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + tbxCondition.Text.Trim() + "','" + tbxElectric.Text.Trim() + "','" + tbxVoltage.Text.Trim() + "','" + tbxSpeed.Text.Trim() + "','" + tbxTorque.Text.Trim() + "')", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
 

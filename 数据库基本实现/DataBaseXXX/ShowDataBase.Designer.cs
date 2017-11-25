@@ -50,7 +50,7 @@
             this.livDataBase.FullRowSelect = true;
             this.livDataBase.Location = new System.Drawing.Point(315, 12);
             this.livDataBase.Name = "livDataBase";
-            this.livDataBase.Size = new System.Drawing.Size(1104, 473);
+            this.livDataBase.Size = new System.Drawing.Size(1054, 473);
             this.livDataBase.TabIndex = 0;
             this.livDataBase.UseCompatibleStateImageBehavior = false;
             this.livDataBase.View = System.Windows.Forms.View.Details;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1429, 616);
+            this.ClientSize = new System.Drawing.Size(1384, 616);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
